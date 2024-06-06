@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="searchBar" placeholder="Search tasks...">
+        <div class="toolbar">
+            <div class="dropdown">
+                <button class="dropbtn">Filter Tasks</button>
+                <div class="dropdown-content">
+                    <a href="#" id="filterAllOption">All Tasks</a>
+                    <a href="#" id="filterPendingOption">Pending Tasks</a>
+                    <a href="#" id="filterCompletedOption">Completed Tasks</a>
+                </div>
+            </div>
+            <button id="deleteAllButton" class="filter-button">Delete All</button>
+        </div>
+        <div id="taskList"></div>
+        <button id="addTaskButton" class="add-task-button"><i class="fas fa-plus"></i></button>
+    </div>
+
+    <div id="taskPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <form id="taskForm">
+                <label for="taskTitle">Task Title</label>
+                <input type="text" id="taskTitle" required>
+                <label for="taskDescription">Task Description</label>
+                <textarea id="taskDescription" required></textarea>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editPopup" class="popup">
+        <div class="popup-content">
+            <span id="closeEditPopup" class="close">&times;</span>
+            <form id="editTaskForm">
+                <label for="editTaskTitle">Task Title</label>
+                <input type="text" id="editTaskTitle" required>
+                <label for="editTaskDescription">Task Description</label>
+                <textarea id="editTaskDescription" required></textarea>
+                <button type="submit">Update Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmationMessage" class="confirmation-message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
